@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "GBP/USD Forex Trader",
+  "version": "1.0",
+  "description": "Notifies when it's a good time to buy/sell GBP/USD based on advanced trading models",
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://query1.finance.yahoo.com/*",
+    "https://query2.finance.yahoo.com/*"
+  ],
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  }
+}

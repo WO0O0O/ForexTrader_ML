@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GBP/USD Forex Trader</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>GBP/USD Forex Trader</h1>
+            <div class="current-rate">
+                <span class="label">Current Rate:</span>
+                <span id="currentRate" class="rate">Loading...</span>
+                <span id="rateChange" class="change"></span>
+            </div>
+        </header>
+        
+        <div class="signal-container">
+            <h2>Latest Signal</h2>
+            <div id="signalBox" class="signal-box neutral">
+                <div id="signalIcon" class="signal-icon">⚖️</div>
+                <div id="signalText" class="signal-text">Analyzing market...</div>
+                <div id="signalTime" class="signal-time">-</div>
+            </div>
+            <div id="signalStrength" class="signal-strength">
+                <div class="strength-label">Signal Strength:</div>
+                <div class="strength-bar">
+                    <div id="strengthFill" class="strength-fill" style="width: 0%"></div>
+                </div>
+                <div id="strengthValue" class="strength-value">0%</div>
+            </div>
+        </div>
+        
+        <div class="indicators-container">
+            <h2>Technical Indicators</h2>
+            <div class="indicators-grid">
+                <div class="indicator">
+                    <div class="indicator-label">RSI</div>
+                    <div id="rsiValue" class="indicator-value">-</div>
+                    <div id="rsiSignal" class="indicator-signal"></div>
+                </div>
+                <div class="indicator">
+                    <div class="indicator-label">MACD</div>
+                    <div id="macdValue" class="indicator-value">-</div>
+                    <div id="macdSignal" class="indicator-signal"></div>
+                </div>
+                <div class="indicator">
+                    <div class="indicator-label">MA Cross</div>
+                    <div id="maCrossValue" class="indicator-value">-</div>
+                    <div id="maCrossSignal" class="indicator-signal"></div>
+                </div>
+                <div class="indicator">
+                    <div class="indicator-label">BB</div>
+                    <div id="bbValue" class="indicator-value">-</div>
+                    <div id="bbSignal" class="indicator-signal"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="settings-container">
+            <h2>Settings</h2>
+            <div class="settings-grid">
+                <div class="setting">
+                    <label for="updateInterval">Update Interval (min):</label>
+                    <select id="updateInterval">
+                        <option value="1">1</option>
+                        <option value="5" selected>5</option>
+                        <option value="15">15</option>
+                        <option value="30">30</option>
+                        <option value="60">60</option>
+                    </select>
+                </div>
+                <div class="setting">
+                    <label for="notificationsEnabled">Notifications:</label>
+                    <input type="checkbox" id="notificationsEnabled" checked>
+                </div>
+                <div class="setting">
+                    <label for="signalThreshold">Signal Threshold (%):</label>
+                    <input type="number" id="signalThreshold" min="50" max="100" value="70" step="5">
+                </div>
+                <div class="setting">
+                    <label for="modelSelection">Trading Model:</label>
+                    <select id="modelSelection">
+                        <option value="ensemble">Ensemble (Recommended)</option>
+                        <option value="ml">Machine Learning</option>
+                        <option value="technical">Technical Analysis</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div class="actions-container">
+            <button id="refreshButton" class="action-button refresh">Refresh</button>
+            <button id="resetButton" class="action-button reset">Reset</button>
+        </div>
+    </div>
+    <script src="js/popup.js"></script>
+</body>
+</html>
