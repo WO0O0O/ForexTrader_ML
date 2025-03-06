@@ -1,0 +1,410 @@
+/* 
+ * GBP/USD Forex Trader - Styles
+ * Modern, professional trading UI
+ */
+
+:root {
+  /* Color palette */
+  --primary: #1e88e5;
+  --primary-light: #6ab7ff;
+  --primary-dark: #005cb2;
+  --accent: #ff9800;
+  --accent-light: #ffc947;
+  --accent-dark: #c66900;
+  --background: #f5f7fa;
+  --card-bg: #ffffff;
+  --text: #212121;
+  --text-secondary: #757575;
+  --buy: #00c853;
+  --sell: #f44336;
+  --neutral: #9e9e9e;
+  --border: #e0e0e0;
+  --shadow: rgba(0, 0, 0, 0.1);
+  
+  /* Typography */
+  --font-primary: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-mono: 'Roboto Mono', 'SF Mono', 'Menlo', monospace;
+}
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--background);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.5;
+  width: 380px;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 16px;
+}
+
+/* Typography */
+h1 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--primary-dark);
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 16px 0 12px;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+}
+
+h2::before {
+  content: '';
+  display: block;
+  width: 3px;
+  height: 16px;
+  background-color: var(--primary);
+  margin-right: 8px;
+  border-radius: 2px;
+}
+
+/* Header */
+header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.current-rate {
+  display: flex;
+  align-items: baseline;
+  margin-top: 6px;
+}
+
+.label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-right: 8px;
+}
+
+.rate {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--primary-dark);
+}
+
+.change {
+  margin-left: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.change.positive {
+  background-color: rgba(0, 200, 83, 0.15);
+  color: var(--buy);
+}
+
+.change.negative {
+  background-color: rgba(244, 67, 54, 0.15);
+  color: var(--sell);
+}
+
+/* Signal box */
+.signal-container {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--shadow);
+  padding: 16px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.signal-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+.signal-box.buy {
+  background-color: rgba(0, 200, 83, 0.1);
+  border-left: 4px solid var(--buy);
+}
+
+.signal-box.sell {
+  background-color: rgba(244, 67, 54, 0.1);
+  border-left: 4px solid var(--sell);
+}
+
+.signal-box.neutral {
+  background-color: rgba(158, 158, 158, 0.1);
+  border-left: 4px solid var(--neutral);
+}
+
+.signal-box.error {
+  background-color: rgba(255, 152, 0, 0.1);
+  border-left: 4px solid var(--accent);
+}
+
+.signal-icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.signal-text {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.signal-time {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.signal-strength {
+  display: flex;
+  flex-direction: column;
+}
+
+.strength-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.strength-bar {
+  height: 6px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.strength-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease, background-color 0.3s ease;
+}
+
+.strength-fill.strong {
+  background-color: var(--buy);
+}
+
+.strength-fill.medium {
+  background-color: var(--accent);
+}
+
+.strength-fill.weak {
+  background-color: var(--sell);
+}
+
+.strength-value {
+  font-size: 13px;
+  text-align: right;
+  font-weight: 500;
+}
+
+/* Indicators */
+.indicators-container {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--shadow);
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.indicators-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.indicator {
+  padding: 12px;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.02);
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.indicator:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px);
+}
+
+.indicator-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.indicator-value {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.indicator-signal {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.indicator-signal.buy {
+  background-color: rgba(0, 200, 83, 0.15);
+  color: var(--buy);
+}
+
+.indicator-signal.sell {
+  background-color: rgba(244, 67, 54, 0.15);
+  color: var(--sell);
+}
+
+.indicator-signal.neutral {
+  background-color: rgba(158, 158, 158, 0.15);
+  color: var(--neutral);
+}
+
+/* Settings */
+.settings-container {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--shadow);
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.settings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.setting {
+  display: flex;
+  flex-direction: column;
+}
+
+.setting label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.setting select, 
+.setting input[type="number"] {
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background-color: var(--background);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.setting select:focus, 
+.setting input[type="number"]:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(30, 136, 229, 0.2);
+}
+
+.setting input[type="checkbox"] {
+  margin-top: 6px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Action buttons */
+.actions-container {
+  display: flex;
+  gap: 10px;
+}
+
+.action-button {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: none;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-button.refresh {
+  background-color: var(--primary);
+  color: white;
+}
+
+.action-button.refresh:hover {
+  background-color: var(--primary-dark);
+}
+
+.action-button.refresh:before {
+  content: '↻';
+  margin-right: 6px;
+}
+
+.action-button.reset {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--text);
+}
+
+.action-button.reset:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.action-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.signal-box.buy, 
+.signal-box.sell {
+  animation: pulse 1.5s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+  body {
+    width: 340px;
+  }
+  
+  .settings-grid,
+  .indicators-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,11 @@
+You'll need to create icon files with the following names and sizes:
+
+1. icon16.png (16x16 pixels)
+2. icon48.png (48x48 pixels)
+3. icon128.png (128x128 pixels)
+
+These icons should be in PNG format with transparent backgrounds.
+
+You can create these icons using any image editing software like Photoshop, GIMP, or online tools.
+
+For a quick solution, you could use emoji or currency symbols (£ and $) with a green/blue background to represent the GBP/USD pair.
